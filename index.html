@@ -3,9 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>API Full Stack Project</title>
+    <title>Nutri App</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <!-- You code goes here-->
+    <header>
+      <h1>Nutri App</h1>
+      <div class="logo">
+        <img src="assets/image-removebg-preview.png" alt="Nutri App logo" />
+      </div>
+    </header>
+    <main>
+      <div class="panel left-panel">
+        <h2>Nutrition Summary</h2>
+        <div id="nutrition-summary">
+          <p>Total Calories: 0</p>
+          <p>Protein: 0g</p>
+          <p>Carbs: 0g</p>
+          <p>Fiber: 0g</p>
+        </div>
+        <h2>Daily Tracker</h2>
+        <div id="daily-tracker">
+          <button id="reset-macros">Reset Macros</button>
+        </div>
+      </div>
+      <div class="panel center-panel">
+        <h2>Ingredient Search</h2>
+        <input type="text" id="ingredient-search" placeholder="Search ingredients..." />
+        <button id="search-ingredients">Search</button>
+        <div id="ingredient-results">
+          <!-- Placeholder for results -->
+        </div>
+        <div id="ingredient-macros">
+          <!-- Placeholder for macros -->
+        </div>
+        <button id="add-to-macros">Add To Macros</button>
+      </div>
+      <div class="panel right-panel">
+        <h2>Recipe Search</h2>
+        <input type="text" id="recipe-search" placeholder="Search recipes..." />
+        <button id="search-recipes">Search</button>
+        <div id="recipe-results">
+          <!-- Placeholder for results -->
+        </div>
+        <div id="recipe-details">
+          <!-- Placeholder for details -->
+        </div>
+        <button id="save-locally">Add To Macros</button>
+      </div>
+    </main>
   </body>
 </html>

@@ -1,1 +1,95 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.logo img {
+  display: block;
+  width: 72px;
+  height: auto;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.panel {
+  flex: 1;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.panel:last-child {
+  border-right: none;
+}
+
+.left-panel {
+  background-color: #f9f9f9;
+}
+
+.center-panel {
+  background-color: #fff;
+}
+
+.right-panel {
+  background-color: #f9f9f9;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+input, button {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#nutrition-summary, #daily-tracker, #ingredient-results, #ingredient-macros, #recipe-results, #recipe-details {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+  .panel {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+}
