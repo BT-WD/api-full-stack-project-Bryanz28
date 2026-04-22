@@ -1,56 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nutri App</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Nutri App</h1>
-      <div class="logo">
-        <img src="assets/image-removebg-preview.png" alt="Nutri App logo" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutri App – Search Foods</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <header>
+    <h1>Nutri App</h1>
+    <p>Search Foods & Track Your Macros</p>
+
+    <!-- Leaf Logo (top-right) -->
+    <img src="assets/leaf.png" alt="Leaf Logo" class="leaf-logo">
+  </header>
+
+  <main>
+
+    <!-- DISCLAIMER -->
+    <p class="disclaimer">⚠️ May lag due to API rate limits</p>
+
+    <!-- FOOD SEARCH SECTION -->
+    <section class="search-section">
+      <h2>Search Foods</h2>
+
+      <div class="search-box">
+        <input id="ingredient-input" type="text" placeholder="Search for a food (e.g., apple)">
+        <button id="ingredient-search-btn">Search</button>
       </div>
-    </header>
-    <main>
-      <div class="panel left-panel">
-        <h2>Nutrition Summary</h2>
-        <div id="nutrition-summary">
-          <p>Total Calories: 0</p>
-          <p>Protein: 0g</p>
-          <p>Carbs: 0g</p>
-          <p>Fiber: 0g</p>
+
+      <ul id="ingredient-results" class="results-list"></ul>
+    </section>
+
+    <!-- MACRO TOTALS -->
+    <section class="macros-section">
+      <h2>Daily Macros</h2>
+
+      <div class="macro-grid">
+        <div class="macro-box">
+          <h3>Calories</h3>
+          <p id="total-calories">0</p>
         </div>
-        <h2>Daily Tracker</h2>
-        <div id="daily-tracker">
-          <button id="reset-macros">Reset Macros</button>
+
+        <div class="macro-box">
+          <h3>Protein</h3>
+          <p id="total-protein">0g</p>
+        </div>
+
+        <div class="macro-box">
+          <h3>Carbs</h3>
+          <p id="total-carbs">0g</p>
+        </div>
+
+        <div class="macro-box">
+          <h3>Fiber</h3>
+          <p id="total-fiber">0g</p>
         </div>
       </div>
-      <div class="panel center-panel">
-        <h2>Ingredient Search</h2>
-        <input type="text" id="ingredient-search" placeholder="Search ingredients..." />
-        <button id="search-ingredients">Search</button>
-        <div id="ingredient-results">
-          <!-- Placeholder for results -->
-        </div>
-        <div id="ingredient-macros">
-          <!-- Placeholder for macros -->
-        </div>
-        <button id="add-to-macros">Add To Macros</button>
-      </div>
-      <div class="panel right-panel">
-        <h2>Recipe Search</h2>
-        <input type="text" id="recipe-search" placeholder="Search recipes..." />
-        <button id="search-recipes">Search</button>
-        <div id="recipe-results">
-          <!-- Placeholder for results -->
-        </div>
-        <div id="recipe-details">
-          <!-- Placeholder for details -->
-        </div>
-        <button id="save-locally">Add To Macros</button>
-      </div>
-    </main>
-  </body>
+
+      <button id="reset-btn" class="reset-btn">Reset Totals</button>
+    </section>
+
+  </main>
+
+  <script src="index.js"></script>
+</body>
 </html>
