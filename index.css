@@ -1,3 +1,4 @@
+/* GENERAL PAGE STYLE */
 body {
   font-family: Arial, sans-serif;
   background: #f5f5f5;
@@ -6,27 +7,41 @@ body {
   color: #222;
 }
 
+/* HEADER */
 header {
   background: #4CAF50;
   color: white;
   padding: 20px;
-  text-align: center;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
+/* NUTRI APP TITLE (top-left, enlarged) */
+.app-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  margin-left: 10px;
+}
+
+/* LEAF LOGO (enlarged, top-right) */
 .leaf-logo {
   position: absolute;
-  top: 15px;
+  top: 10px;
   right: 20px;
-  width: 50px;
+  width: 80px;
+  height: auto;
 }
 
+/* DISCLAIMER (enlarged + darker) */
 .disclaimer {
   text-align: center;
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 15px;
-  opacity: 0.8;
+  font-size: 20px;
+  color: #333;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 main {
@@ -35,6 +50,7 @@ main {
   margin: 20px auto;
 }
 
+/* SEARCH SECTION */
 .search-section,
 .recent-section,
 .macros-section {
@@ -69,6 +85,7 @@ main {
   background: #45a049;
 }
 
+/* RESULTS LIST */
 .results-list {
   list-style: none;
   padding: 0;
@@ -87,6 +104,7 @@ main {
   background: #dcdcdc;
 }
 
+/* MACROS */
 .macro-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

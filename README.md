@@ -35,3 +35,10 @@ To meet the requirements, the project will include a static HTML/CSS structure w
 My app uses localStorage in two key ways to satisfy the database integration requirement. First, it persists the user’s daily macro totals (calories, protein, carbs, fiber) by saving the macros object to localStorage after every update and reloading it on page load, so totals remain even after refresh or closing the tab.
 
 Second, it stores a “Recent Foods” list based on API results: whenever a user clicks a food from the search results, the app saves its label and calories into a recentFoods array in localStorage and re-renders that list on load. This means the app is reading, writing, and displaying persisted data from localStorage, effectively using it as a simple client-side database.
+
+####UI/UX & Design ✱------------------------------------------------------------------------------------------------------------------------------------------------------
+UI Changes:
+*Enlarge the leaf logo
+*Remove “Search Foods & Track Your Macros”
+*Enlarge “Nutri App” and move it to the top‑left
+*Enlarge and darken the disclaimer text
