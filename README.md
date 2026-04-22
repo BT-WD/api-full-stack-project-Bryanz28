@@ -1,6 +1,10 @@
-# API-Project
+# API-Project---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Wireframe / UI Plan Notes
+The nutrition app is designed for people who work out, want to eat healthier, or run restaurants needing fast nutrition analytics. It uses the Edamam API for both recipe search and nutrition data, so users can search meals by keyword, filter by diet or health labels, and view nutrient facts for calories, protein, carbs, and fiber. The app will be a web-based local project with a clear UI showing search, recipe results, nutrient summary cards, and a tracker panel for daily totals.
+
+To meet the requirements, the project will include a static HTML/CSS structure with placeholders for API data, async JavaScript fetch calls to Edamam endpoints, and localStorage persistence for saved tracker totals and favorites. A simple login/account section can simulate Google account behavior, while the core app stores daily nutrition data locally and updates the page dynamically, fulfilling the rubric for UI/UX, API integration, and local data storage.
+
+## Wireframe / UI Plan Notes----------------------------------------------------------------------------------------------------------------------------------------------
 
 The app layout includes a clean top header with the title `Nutri App` and a leaf-style logo on the right.
 
@@ -26,3 +30,8 @@ These notes should be used as the UI plan reference for the project and support 
 The nutrition app is designed for people who work out, want to eat healthier, or run restaurants needing fast nutrition analytics. It uses the Edamam API for both recipe search and nutrition data, so users can search meals by keyword, filter by diet or health labels, and view nutrient facts for calories, protein, carbs, and fiber. The app will be a web-based local project with a clear UI showing search, recipe results, nutrient summary cards, and a tracker panel for daily totals.
 
 To meet the requirements, the project will include a static HTML/CSS structure with placeholders for API data, async JavaScript fetch calls to Edamam endpoints, and localStorage persistence for saved tracker totals and favorites. A simple login/account section can simulate Google account behavior, while the core app stores daily nutrition data locally and updates the page dynamically, fulfilling the rubric for UI/UX, API integration, and local data storage.
+
+###Database Integration/  localStaorage ✱---------------------------------------------------------------------------------------------------------------------------------
+My app uses localStorage in two key ways to satisfy the database integration requirement. First, it persists the user’s daily macro totals (calories, protein, carbs, fiber) by saving the macros object to localStorage after every update and reloading it on page load, so totals remain even after refresh or closing the tab.
+
+Second, it stores a “Recent Foods” list based on API results: whenever a user clicks a food from the search results, the app saves its label and calories into a recentFoods array in localStorage and re-renders that list on load. This means the app is reading, writing, and displaying persisted data from localStorage, effectively using it as a simple client-side database.

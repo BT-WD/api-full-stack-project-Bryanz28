@@ -1,4 +1,3 @@
-/* GENERAL PAGE STYLE */
 body {
   font-family: Arial, sans-serif;
   background: #f5f5f5;
@@ -15,16 +14,13 @@ header {
   position: relative;
 }
 
-/* LEAF LOGO (top-right) */
 .leaf-logo {
   position: absolute;
   top: 15px;
   right: 20px;
   width: 50px;
-  height: auto;
 }
 
-/* DISCLAIMER */
 .disclaimer {
   text-align: center;
   font-size: 14px;
@@ -39,8 +35,9 @@ main {
   margin: 20px auto;
 }
 
-/* SEARCH SECTION */
-.search-section {
+.search-section,
+.recent-section,
+.macros-section {
   background: white;
   padding: 20px;
   border-radius: 10px;
@@ -72,7 +69,6 @@ main {
   background: #45a049;
 }
 
-/* RESULTS LIST */
 .results-list {
   list-style: none;
   padding: 0;
@@ -89,13 +85,6 @@ main {
 
 .result-item:hover {
   background: #dcdcdc;
-}
-
-/* MACROS SECTION */
-.macros-section {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
 }
 
 .macro-grid {

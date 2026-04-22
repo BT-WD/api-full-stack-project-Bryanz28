@@ -1,5 +1,5 @@
 // -------------------------------
-// API KEYS (Food Database Only)
+// API KEYS
 // -------------------------------
 const FOOD_APP_ID = "004d07f3";
 const FOOD_APP_KEY = "a33c037858de9724de1cc6cd6f63fc6c";
@@ -9,6 +9,7 @@ const FOOD_APP_KEY = "a33c037858de9724de1cc6cd6f63fc6c";
 // -------------------------------
 const ingredientInput = document.querySelector("#ingredient-input");
 const ingredientResults = document.querySelector("#ingredient-results");
+const recentFoodsList = document.querySelector("#recent-foods");
 
 const totalCalories = document.querySelector("#total-calories");
 const totalProtein = document.querySelector("#total-protein");
@@ -20,18 +21,38 @@ const resetBtn = document.querySelector("#reset-btn");
 // -------------------------------
 // MACROS STATE
 // -------------------------------
-let macros = {
+let macros = JSON.parse(localStorage.getItem("macros")) || {
   calories: 0,
   protein: 0,
   carbs: 0,
   fiber: 0
 };
 
-// Load saved macros
-if (localStorage.getItem("macros")) {
-  macros = JSON.parse(localStorage.getItem("macros"));
-  updateMacroDisplay();
+updateMacroDisplay();
+
+// -------------------------------
+// RECENT FOODS (DATABASE FEATURE)
+// -------------------------------
+let recentFoods = JSON.parse(localStorage.getItem("recentFoods")) || [];
+
+function saveRecentFood(food) {
+  recentFoods.unshift(food);
+  recentFoods = recentFoods.slice(0, 5);
+  localStorage.setItem("recentFoods", JSON.stringify(recentFoods));
+  renderRecentFoods();
 }
+
+function renderRecentFoods() {
+  recentFoodsList.innerHTML = "";
+  recentFoods.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item.label} (${item.kcal} kcal)`;
+    li.classList.add("result-item");
+    recentFoodsList.appendChild(li);
+  });
+}
+
+renderRecentFoods();
 
 // -------------------------------
 // UPDATE MACRO DISPLAY
@@ -58,7 +79,7 @@ function addMacros(nutrients) {
 }
 
 // -------------------------------
-// FOOD SEARCH (Ingredient Search Only)
+// FOOD SEARCH
 // -------------------------------
 async function searchFoods(event) {
   event?.preventDefault();
@@ -88,6 +109,11 @@ async function searchFoods(event) {
 
     li.addEventListener("click", () => {
       addMacros(food.nutrients);
+
+      saveRecentFood({
+        label: food.label,
+        kcal: Math.round(food.nutrients.ENERC_KCAL)
+      });
     });
 
     ingredientResults.appendChild(li);
